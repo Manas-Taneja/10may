@@ -1,180 +1,95 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-  const [isExpired, setIsExpired] = useState(false);
+  const [countdown, setCountdown] = useState('');
 
   useEffect(() => {
-    const targetDate = new Date("2025-07-13T00:00:00+05:30");
+    const targetDate = new Date("2025-07-12T08:00:00"); // Set their landing time
 
-    const calculateTimeLeft = () => {
+    const updateCountdown = () => {
       const now = new Date();
-      const difference = targetDate - now;
+      const diff = targetDate - now;
 
-      if (difference <= 0) {
-        setIsExpired(true);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      if (diff <= 0) {
+        setCountdown("🎉 HE’S BACK BABY 🎉");
         return;
       }
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      setTimeLeft({ days, hours, minutes, seconds });
+      setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <marquee scrollamount="50" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50, backgroundColor: 'transparent', height: '50px', fontSize: '24px', fontWeight: 'bold', color: 'red' }}>
-        Gaand mein banta Lund pe nariyal
-      </marquee>
-      <div style={{ 
-        width: '100%',
-        height: '100vh',
-        minHeight: '100vh', 
-        backgroundColor: '#f0f0f0', 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        padding: 0,
-        paddingTop: '70px',
-        fontFamily: 'Arial, sans-serif',
-        boxSizing: 'border-box',
-        overflow: 'hidden'
+    <div style={{
+      backgroundImage: "url('https://media.giphy.com/media/l41lI4bYmcsPJX9Go/giphy.gif')",
+      backgroundSize: 'cover',
+      textAlign: 'center',
+      fontFamily: "'Comic Sans MS', cursive",
+      color: 'hotpink',
+      padding: '2rem',
+      overflowX: 'hidden',
+      minHeight: '100vh'
+    }}>
+      <h1 style={{
+        fontSize: '3rem',
+        textShadow: '2px 2px yellow',
+        marginTop: '2rem'
       }}>
-        <div style={{ textAlign: 'center', width: '100%' }}>
-          <h1 style={{ 
-            fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '24px' : '48px', 
-            fontWeight: 'bold', 
-            color: '#333', 
-            marginBottom: '20px',
-            fontFamily: 'Arial, sans-serif',
-            padding: '0 10px'
-          }}>
-            Baniyan Chor X Mega Under Age
-          </h1>
-          
-          <p style={{ 
-            fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '18px' : '24px', 
-            color: '#666', 
-            marginBottom: '30px',
-            fontFamily: 'Arial, sans-serif',
-            padding: '0 10px'
-          }}>
-            {isExpired ? "The time has arrived! 🎉" : "Soon..."}
-          </p>
+        🛬 THE HOMECOMING OF ADITYA MANISH JHA 🛬
+      </h1>
 
-          {!isExpired ? (
-            <div className="countdown-grid">
-              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
-                <div style={{ 
-                  backgroundColor: '#007bff', 
-                  color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
-                  fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
-                  borderRadius: '10px',
-                  border: '2px solid #0056b3',
-                  width: '100%',
-                  boxSizing: 'border-box'
-                }}>
-                  {timeLeft.days.toString().padStart(2, '0')}
-                </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
-                  DAYS
-                </div>
-              </div>
-              
-              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
-                <div style={{ 
-                  backgroundColor: '#28a745', 
-                  color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
-                  fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
-                  borderRadius: '10px',
-                  border: '2px solid #1e7e34',
-                  width: '100%',
-                  boxSizing: 'border-box'
-                }}>
-                  {timeLeft.hours.toString().padStart(2, '0')}
-                </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
-                  HOURS
-                </div>
-              </div>
-              
-              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
-                <div style={{ 
-                  backgroundColor: '#ffc107', 
-                  color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
-                  fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
-                  borderRadius: '10px',
-                  border: '2px solid #e0a800',
-                  width: '100%',
-                  boxSizing: 'border-box'
-                }}>
-                  {timeLeft.minutes.toString().padStart(2, '0')}
-                </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
-                  MINUTES
-                </div>
-              </div>
-              
-              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
-                <div style={{ 
-                  backgroundColor: '#dc3545', 
-                  color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
-                  fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
-                  borderRadius: '10px',
-                  border: '2px solid #c82333',
-                  width: '100%',
-                  boxSizing: 'border-box'
-                }}>
-                  {timeLeft.seconds.toString().padStart(2, '0')}
-                </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
-                  SECONDS
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div style={{ 
-              backgroundColor: '#28a745', 
-              color: 'white', 
-              fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '32px' : '48px', 
-              fontWeight: 'bold', 
-              padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '30px' : '40px', 
-              borderRadius: '10px',
-              border: '3px solid #1e7e34',
-              margin: '0 10px'
-            }}>
-              🎊 IT&apos;S TIME! 🎊
-            </div>
-          )}
+      <div style={{
+        fontSize: '4rem',
+        color: 'white',
+        textShadow: '3px 3px black',
+        margin: '20px'
+      }}>
+        {countdown}
+      </div>
+
+      <div
+        style={{
+          marginTop: '30px',
+          padding: '10px',
+          border: '3px dashed red',
+          background: 'yellow',
+          fontSize: '24px',
+          overflow: 'hidden',
+          // whiteSpace: 'nowrap',
+          position: 'relative'
+        }}
+      >
+        <div
+          style={{
+            display: 'inline-block',
+            animation: 'scroll-left 4s linear infinite',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          🥵 Gand mein Banta, Lund pe Nariyal 🥵
         </div>
       </div>
-    </>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
+    </div>
   );
 }
