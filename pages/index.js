@@ -46,19 +46,20 @@ export default function Home() {
         Gaand mein banta Lund pe nariyal
       </marquee>
       <div style={{ 
+        width: '100vw',
+        height: '100vh',
         minHeight: '100vh', 
         backgroundColor: '#f0f0f0', 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center', 
-        padding: '10px',
+        padding: 0,
         paddingTop: '70px',
         fontFamily: 'Arial, sans-serif',
-        width: '100vw',
         boxSizing: 'border-box',
-        overflowX: 'hidden'
+        overflow: 'hidden'
       }}>
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', width: '100%' }}>
           <h1 style={{ 
             fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '24px' : '48px', 
             fontWeight: 'bold', 
