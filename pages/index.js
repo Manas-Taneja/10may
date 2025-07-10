@@ -46,7 +46,7 @@ export default function Home() {
         Gaand mein banta Lund pe nariyal
       </marquee>
       <div style={{ 
-        width: '100vw',
+        width: '100%',
         height: '100vh',
         minHeight: '100vh', 
         backgroundColor: '#f0f0f0', 
@@ -87,7 +87,10 @@ export default function Home() {
               gridTemplateColumns: typeof window !== 'undefined' && window.innerWidth <= 768 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', 
               gap: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
               marginBottom: '30px',
-              padding: '0 10px'
+              padding: '0 10px',
+              maxWidth: '100%',
+              boxSizing: 'border-box',
+              width: '100%'
             }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ 
