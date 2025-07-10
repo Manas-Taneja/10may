@@ -83,74 +83,78 @@ export default function Home() {
 
           {!isExpired ? (
             <div className="countdown-grid">
-              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
                 <div style={{ 
                   backgroundColor: '#007bff', 
                   color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '32px' : '48px', 
+                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
                   fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
+                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
                   borderRadius: '10px',
                   border: '2px solid #0056b3',
-                  width: '100%'
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   {timeLeft.days.toString().padStart(2, '0')}
                 </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '14px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
+                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
                   DAYS
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
                 <div style={{ 
                   backgroundColor: '#28a745', 
                   color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '32px' : '48px', 
+                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
                   fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
+                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
                   borderRadius: '10px',
                   border: '2px solid #1e7e34',
-                  width: '100%'
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   {timeLeft.hours.toString().padStart(2, '0')}
                 </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '14px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
+                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
                   HOURS
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
                 <div style={{ 
                   backgroundColor: '#ffc107', 
                   color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '32px' : '48px', 
+                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
                   fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
+                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
                   borderRadius: '10px',
                   border: '2px solid #e0a800',
-                  width: '100%'
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   {timeLeft.minutes.toString().padStart(2, '0')}
                 </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '14px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
+                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
                   MINUTES
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', maxWidth: '120px', width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
                 <div style={{ 
                   backgroundColor: '#dc3545', 
                   color: 'white', 
-                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '32px' : '48px', 
+                  fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '28px' : '48px', 
                   fontWeight: 'bold', 
-                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
+                  padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
                   borderRadius: '10px',
                   border: '2px solid #c82333',
-                  width: '100%'
+                  width: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   {timeLeft.seconds.toString().padStart(2, '0')}
                 </div>
-                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '14px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
+                <div style={{ fontSize: typeof window !== 'undefined' && window.innerWidth <= 768 ? '12px' : '18px', color: '#333', marginTop: '10px', fontWeight: 'bold' }}>
                   SECONDS
                 </div>
               </div>
