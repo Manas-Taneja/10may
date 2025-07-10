@@ -82,17 +82,8 @@ export default function Home() {
           </p>
 
           {!isExpired ? (
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: typeof window !== 'undefined' && window.innerWidth <= 768 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', 
-              gap: typeof window !== 'undefined' && window.innerWidth <= 768 ? '10px' : '20px', 
-              marginBottom: '30px',
-              padding: '0 10px',
-              maxWidth: '100%',
-              boxSizing: 'border-box',
-              width: '100%'
-            }}>
-              <div style={{ textAlign: 'center' }}>
+            <div className="countdown-grid">
+              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
                 <div style={{ 
                   backgroundColor: '#007bff', 
                   color: 'white', 
@@ -100,7 +91,8 @@ export default function Home() {
                   fontWeight: 'bold', 
                   padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
                   borderRadius: '10px',
-                  border: '2px solid #0056b3'
+                  border: '2px solid #0056b3',
+                  width: '100%'
                 }}>
                   {timeLeft.days.toString().padStart(2, '0')}
                 </div>
@@ -109,7 +101,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
                 <div style={{ 
                   backgroundColor: '#28a745', 
                   color: 'white', 
@@ -117,7 +109,8 @@ export default function Home() {
                   fontWeight: 'bold', 
                   padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
                   borderRadius: '10px',
-                  border: '2px solid #1e7e34'
+                  border: '2px solid #1e7e34',
+                  width: '100%'
                 }}>
                   {timeLeft.hours.toString().padStart(2, '0')}
                 </div>
@@ -126,7 +119,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
                 <div style={{ 
                   backgroundColor: '#ffc107', 
                   color: 'white', 
@@ -134,7 +127,8 @@ export default function Home() {
                   fontWeight: 'bold', 
                   padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
                   borderRadius: '10px',
-                  border: '2px solid #e0a800'
+                  border: '2px solid #e0a800',
+                  width: '100%'
                 }}>
                   {timeLeft.minutes.toString().padStart(2, '0')}
                 </div>
@@ -143,7 +137,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', maxWidth: '140px', width: '100%', margin: '0 auto' }}>
                 <div style={{ 
                   backgroundColor: '#dc3545', 
                   color: 'white', 
@@ -151,7 +145,8 @@ export default function Home() {
                   fontWeight: 'bold', 
                   padding: typeof window !== 'undefined' && window.innerWidth <= 768 ? '15px' : '20px', 
                   borderRadius: '10px',
-                  border: '2px solid #c82333'
+                  border: '2px solid #c82333',
+                  width: '100%'
                 }}>
                   {timeLeft.seconds.toString().padStart(2, '0')}
                 </div>

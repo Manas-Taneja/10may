@@ -43,3 +43,25 @@ body {
 .animate-marquee-seamless {
   animation: marquee-seamless 1s linear infinite;
 }
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .countdown-grid {
+    grid-template-columns: 1fr;
+  }
+}
