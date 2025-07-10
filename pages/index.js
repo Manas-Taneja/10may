@@ -38,9 +38,9 @@ export default function Home() {
 
   return (
     <>
-      <marquee scrollamount="50" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50, backgroundColor: 'transparent', height: '50px', fontSize: '24px', fontWeight: 'bold', color: 'red' }}>
-        Gaand mein banta Lund pe nariyal
-      </marquee>
+              <marquee scrollamount="50" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50, backgroundColor: 'transparent', height: '50px', fontSize: '24px', fontWeight: 'bold', color: 'red' }}>
+          Gaand mein banta Lund pe nariyal
+        </marquee>
       
       <div style={{ 
         minHeight: '100vh', 
@@ -157,7 +157,7 @@ export default function Home() {
               borderRadius: '10px',
               border: '3px solid #1e7e34'
             }}>
-              🎊 IT'S TIME! 🎊
+              🎊 IT`&apos;`S TIME! 🎊
             </div>
           )}
         </div>
