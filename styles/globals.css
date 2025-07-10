@@ -20,8 +20,14 @@
 }
 
 html, body, #__next, main {
+  background: url('/bg.gif') repeat;
+  background-size: auto;
   background-color: #000 !important;
-  cursor: url('https://abs.twimg.com/emoji/v2/72x72/2728.png'), auto !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -67,4 +73,75 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Comic Sans MS', 'Comic Sans' !important;
+}
+
+.container {
+  text-align: center;
+  font-family: 'Comic Sans MS';
+  color: hotpink;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px yellow;
+}
+
+.countdown {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 3px 3px black;
+  margin: 1rem 0;
+}
+
+.marquee {
+  margin: 2rem 0;
+  padding: 10px;
+  border: 3px dashed red;
+  background: yellow;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: scroll-left 10s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slideshow img {
+  width: 300px;
+  border: 5px dotted pink;
+  margin-top: 1rem;
+  transition: transform 0.5s;
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, white 0%, transparent 70%);
+  pointer-events: none;
+  animation: sparkle-fade 0.5s forwards;
+}
+
+@keyframes sparkle-fade {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(2); }
 }
