@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [countdown, setCountdown] = useState('');
+  const [isBack, setIsBack] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
   const images = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png', '/6.png', '/7.png', '/8.png', '/9.png']; // your pics
 
@@ -11,7 +12,10 @@ export default function Home() {
     const tick = () => {
       const now = new Date();
       const diff = target - now;
-      if (diff <= 0) return setCountdown("🎉 HE’S BACK BABY 🎉");
+      if (diff <= 0) {
+        setIsBack(true);
+        return setCountdown("🎉 HE'S BACK BABY 🎉");
+      }
       const d = Math.floor(diff / 86400000);
       const h = Math.floor((diff/3600000)%24);
       const m = Math.floor((diff/60000)%60);
@@ -74,6 +78,11 @@ export default function Home() {
 
   return (
     <div className="container">
+      {isBack && (
+        <div className="back-overlay">
+          <div className="back-message">🎉 HE'S BACK BABY 🎉</div>
+        </div>
+      )}
       <h1>🛬 THE HOMECOMING OF ADITYA MANISH JHA 🛬</h1>
       <div className="countdown">{countdown}</div>
       <div className="marquee">
@@ -96,7 +105,7 @@ export default function Home() {
         .container {
           background: url('/bg.gif') repeat;
           text-align: center;
-          font-family: 'Comic Sans MS', cursive;
+          font-family: 'Comic Sans MS';
           color: hotpink;
           overflow-x: hidden;
           min-height: 100vh;
@@ -155,7 +164,7 @@ export default function Home() {
           border: none;
           color: white;
           cursor: url('/https://cdn3.emoji.gg/emojis/77576-cringe-face.png'), auto;
-          font-family: 'Comic Sans MS', cursive;
+          font-family: 'Comic Sans MS';
           text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
           transition: all 0.3s ease;
           z-index: 10000;
@@ -179,6 +188,26 @@ export default function Home() {
         @keyframes fade {
           from { opacity: 1; transform: scale(1); }
           to { opacity: 0; transform: scale(2); }
+        }
+        .back-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.95);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 20000;
+        }
+        .back-message {
+          font-size: 6vw;
+          font-family: 'Comic Sans MS';
+          text-align: center;
+          color: hotpink;
+          text-shadow: 4px 4px 12px yellow, 2px 2px 8px black;
         }
       `}</style>
     </div>
