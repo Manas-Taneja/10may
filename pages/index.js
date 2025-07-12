@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     // countdown
-    const target = new Date("2025-07-13T00:17:00+05:30"); // 12:17 AM IST on July 13th
+    const target = new Date("2025-07-13T00:01:00+05:30"); // 12:17 AM IST on July 13th
     const tick = () => {
       const now = new Date();
       const diff = target - now;
