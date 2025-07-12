@@ -14,7 +14,7 @@ export default function Home() {
       const diff = target - now;
       if (diff <= 0) {
         setIsBack(true);
-        return setCountdown("🎉 HE'S BACK BABY 🎉");
+        return setCountdown("🎉 HE&apos;S BACK BABY 🎉");
       }
       const d = Math.floor(diff / 86400000);
       const h = Math.floor((diff/3600000)%24);
@@ -51,7 +51,7 @@ export default function Home() {
       clearInterval(ii);
       clearInterval(pi);
     };
-  }, []);
+  }, [images]);
 
   // sparkle trail
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function Home() {
     <div className="container">
       {isBack && (
         <div className="back-overlay">
-          <div className="back-message">🎉 HE'S BACK BABY 🎉</div>
+          <div className="back-message">🎉 HE&apos;S BACK BABY 🎉</div>
         </div>
       )}
       <h1>🛬 THE HOMECOMING OF ADITYA MANISH JHA 🛬</h1>
