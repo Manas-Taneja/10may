@@ -112,7 +112,7 @@ h1 {
 
 .marquee-content {
   display: inline-block;
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 20s linear infinite;
   white-space: nowrap;
 }
 
