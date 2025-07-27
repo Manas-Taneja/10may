@@ -102,10 +102,10 @@ export default function Home() {
       <div className="countdown">{countdown}</div>
       <div className="marquee">
         <div className="marquee-content">
-          We got a number one victory royale Yeah, Fortnite, we 'bout to get
+          We got a number one victory royale Yeah, Fortnite, we &apos;bout to get
           down (Get down) Ten kills on the board right now Just wiped out Tomato
-          Town My friend just got downed I revived him, now we're heading
-          south-bound Now we're in the Pleasant Park streets Look at the map, go
+          Town My friend just got downed I revived him, now we&apos;re heading
+          south-bound Now we&apos;re in the Pleasant Park streets Look at the map, go
           to the marked sheet Take me to your Xbox to play Fortnite today You
           can take me to Moisty Mire, but not Loot Lake I really love to chug
           jug with you We can be pro Fortnite gamers Take me to your Xbox to
@@ -113,10 +113,10 @@ export default function Home() {
           I really love to chug jug with you We can be pro Fortnite gamers La,
           la-la, la-la, eya La, la-la, la-la, eya La, la-la, la-la, eya Will you
           be my pro Fortnite gamer? Pro Fortnite gamer Can we get a win this
-          weekend? Take me to Loot Lake Let's change the game mode and we can
-          Disco Dominate Let's hop in an ATK Take me to the zone I'm running
+          weekend? Take me to Loot Lake Let&apos;s change the game mode and we can
+          Disco Dominate Let&apos;s hop in an ATK Take me to the zone I&apos;m running
           kind of low on mats, I need to break some stone Dressed in all his
-          fancy clothes He's got Renegade Raider and he's probably a pro He just
+          fancy clothes He&apos;s got Renegade Raider and he&apos;s probably a pro He just
           shot my back I turn back and I attack I just got a victory royale A
           victory royale Take me to your Xbox to play Fortnite today You can
           take me to Moisty Mire, but not Loot Lake I really love to chug jug
